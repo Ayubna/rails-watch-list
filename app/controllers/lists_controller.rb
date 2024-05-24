@@ -3,17 +3,26 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
+  def show
+    @list = List.find(params[:id])
+  end
+
   def new
-    @list = List.find(params[:list_id])
+    @list = List.new
+    # @list = List.find(params[:list_id])
   end
 
   def create
-    @list = List.new(restaurant_params)
+    @list = List.new(list_params)
     if @list.save
       redirect_to list_path(@list)
     else
       render :new, status: :see_other
     end
+
+  def edit
+
+  end
   end
 
   private
