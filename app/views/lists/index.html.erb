@@ -1,0 +1,11 @@
+<h1>All Lists</h1>
+<ul>
+
+  <% @lists.each do|restaurant| %>
+    <%= list.title %>
+    <li>
+      <%=link_to list.title, listt_path(list)%>
+    </li>
+  <%end  %>
+
+</ul>
